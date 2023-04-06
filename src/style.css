@@ -1,1 +1,242 @@
-/* Styles here */
+body {
+  font-family: arial, sans-serif;
+  background: rgb(82, 75, 199);
+  background: linear-gradient(
+    180deg,
+    rgba(82, 75, 199, 1) 10%,
+    rgba(108, 179, 240, 1) 50%,
+    rgba(82, 75, 199, 1) 90%
+  );
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #524bc7;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  color: #625becc7;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 19px;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.weather-app-wrapper {
+  max-width: 700px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: rgba(159, 196, 236, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+}
+
+.settings {
+  color: #524bc7;
+  font-size: 16px;
+}
+
+.btn-current,
+.btn-unit {
+  color: #524bc7;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 0;
+  border: none;
+}
+
+.btn-current:hover,
+.btn-unit:hover {
+  color: #bcb9f5;
+  text-decoration: underline;
+}
+
+.search-form {
+  background: #524bc733;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #524bc7;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #625bec;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #524bc7;
+  background-color: rgba(159, 196, 236, 0.45);
+  border-color: #625becc7;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(98, 91, 236);
+}
+
+.form-control::placeholder {
+  color: #524bc7;
+}
+
+.btn-search {
+  color: #fff;
+  background-color: #524bc7;
+  border-color: #524bc7;
+}
+
+.btn-search:hover {
+  color: #524bc7;
+  background-color: transparent;
+  border-color: #524bc7;
+}
+
+.overview {
+  background: #524bc733;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+}
+
+.weather-boxes {
+  padding: 20px 5px;
+}
+
+.weather-box {
+  background: #524bc733;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+  color: #524bc7;
+  padding: 20px;
+  margin: 10px;
+  height: 150px;
+}
+
+.weather-box h5 {
+  margin: 0;
+}
+
+.box-icon {
+  font-size: 40px;
+}
+
+#sunrise,
+#sunset {
+  font-size: 13px;
+}
+
+.weather-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
+.weather-temperature strong {
+  color: #524bc7;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.weather-temperature .units {
+  color: #524bc7;
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.weather-temperature .active {
+  color: #524bc7;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  color: #524bc7;
+  background: #524bc733;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+
+.weather-forecast-temperatures {
+  font-size: 13px;
+  color: #524bc7;
+}
+
+small {
+  color: #aca9ef;
+  margin-top: 20px;
+}
+
+small a {
+  color: #aca9ef;
+  font-weight: bold;
+}
+
+small a:hover {
+  color: #aca9ef;
+  font-weight: bold;
+  text-decoration: underline;
+}
