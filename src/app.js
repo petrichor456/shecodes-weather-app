@@ -48,7 +48,9 @@ function displayWeatherAspects(response) {
   let riseElement = document.querySelector("#sunrise");
   let setElement = document.querySelector("#sunset");
 
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cTemp = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(cTemp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -77,7 +79,33 @@ function handleSubmit(event) {
   console.log(cityInputElement.value);
 }
 
+function showFTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  cLink.classList.remove("active-temp");
+  fLink.classList.add("active-temp");
+  let fTemp = (cTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fTemp);
+}
+
+function showCTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  cLink.classList.add("active-temp");
+  fLink.classList.remove("active-temp");
+  temperatureElement.innerHTML = Math.round(cTemp);
+}
+
+let cTemp = null;
+
 search("Edinburgh");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fLink = document.querySelector("#f-link");
+fLink.addEventListener("click", showFTemp);
+
+let cLink = document.querySelector("#c-link");
+cLink.addEventListener("click", showCTemp);
