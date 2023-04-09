@@ -70,6 +70,7 @@ li:first-letter {
 
 .btn-current,
 .btn-unit {
+  background-color: transparent;
   color: #524bc7;
   font-weight: bold;
   font-size: 18px;
