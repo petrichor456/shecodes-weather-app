@@ -47,6 +47,7 @@ function displayWeatherAspects(response) {
   let iconElement = document.querySelector("#icon");
   let riseElement = document.querySelector("#sunrise");
   let setElement = document.querySelector("#sunset");
+  let visElement = document.querySelector("#visibility");
 
   cTemp = response.data.main.temp;
 
@@ -58,6 +59,7 @@ function displayWeatherAspects(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   riseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
   setElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  visElement.innerHTML = response.data.visibility / 1000;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
