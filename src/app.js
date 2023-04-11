@@ -50,15 +50,18 @@ function displayWeatherAspects(response) {
   let visElement = document.querySelector("#visibility");
 
   cTemp = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(cTemp);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  riseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
-  setElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  riseElement.innerHTML = formatTime(
+    (response.data.sys.sunrise + response.data.timezone) * 1000
+  );
+  setElement.innerHTML = formatTime(
+    (response.data.sys.sunset + response.data.timezone) * 1000
+  );
   visElement.innerHTML = response.data.visibility / 1000;
   iconElement.setAttribute(
     "src",
@@ -102,6 +105,7 @@ function showCTemp(event) {
 let cTemp = null;
 
 search("Edinburgh");
+search("Phuket");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
