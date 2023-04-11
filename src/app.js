@@ -87,24 +87,28 @@ function handleSubmit(event) {
 function showFTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  let temperatureUnit = document.querySelector(".units");
 
   cLink.classList.remove("active-temp");
   fLink.classList.add("active-temp");
   let fTemp = (cTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fTemp);
+  temperatureUnit.innerHTML = `°F`;
 }
 
 function showCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
+  let temperatureUnit = document.querySelector(".units");
   cLink.classList.add("active-temp");
   fLink.classList.remove("active-temp");
   temperatureElement.innerHTML = Math.round(cTemp);
+  temperatureUnit.innerHTML = `°C`;
+}
 }
 
 let cTemp = null;
 
-search("Edinburgh");
 search("Phuket");
 
 let form = document.querySelector("#search-form");
