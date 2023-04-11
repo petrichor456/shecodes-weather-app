@@ -105,6 +105,17 @@ function showCTemp(event) {
   temperatureElement.innerHTML = Math.round(cTemp);
   temperatureUnit.innerHTML = `°C`;
 }
+
+function searchLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherAspects);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 let cTemp = null;
@@ -119,3 +130,6 @@ fLink.addEventListener("click", showFTemp);
 
 let cLink = document.querySelector("#c-link");
 cLink.addEventListener("click", showCTemp);
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", getCurrentLocation);
