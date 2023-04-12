@@ -70,13 +70,13 @@ function displayForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="42"
+          width="52"
         />
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> ${Math.round(
+          <span class="weather-forecast-temperature-max mx-1"> ${Math.round(
             forecastDay.temp.max
           )}° </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+          <span class="weather-forecast-temperature-min mx-1"> ${Math.round(
             forecastDay.temp.min
           )}° </span>
         </div>
@@ -143,24 +143,10 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  let temperatureUnit = document.querySelector(".units");
-
-  cLink.classList.remove("active-temp");
-  fLink.classList.add("active-temp");
-  let fTemp = (cTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fTemp);
-  temperatureUnit.innerHTML = `°F`;
-}
-
 function showCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   let temperatureUnit = document.querySelector(".units");
-  cLink.classList.add("active-temp");
-  fLink.classList.remove("active-temp");
   temperatureElement.innerHTML = Math.round(cTemp);
   temperatureUnit.innerHTML = `°C`;
 }
@@ -183,12 +169,6 @@ search("Edinburgh");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fLink = document.querySelector("#f-link");
-fLink.addEventListener("click", showFTemp);
-
-let cLink = document.querySelector("#c-link");
-cLink.addEventListener("click", showCTemp);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
