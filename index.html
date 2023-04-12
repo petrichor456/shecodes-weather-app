@@ -15,6 +15,12 @@
       src="https://kit.fontawesome.com/433b16cf83.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -22,10 +28,9 @@
     <div class="container-fluid">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div class="settings-box row mb-4">
-            <div class="col">
-              <span class="settings">Find out the weather where you are:</span>
-              <br />
+          <div class="settings row mx-2 mb-4">
+            <div class="col px-0">
+              Current location
               <button class="btn-current" id="current-location">
                 <i class="fa-solid fa-location-dot"></i>
               </button>
